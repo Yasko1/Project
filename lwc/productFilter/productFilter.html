@@ -1,0 +1,45 @@
+<template>
+    <div class="slds-m-horizontal_medium">
+        <lightning-input type="search"
+                         onchange={handleSearchTermChange}
+                         variant="label-hidden"
+                         class="slds-m-bottom_small"
+                         label="Search"
+                         placeholder="Search for products"
+                         value={searchTerm}>
+        </lightning-input>
+        <div class="c-container">
+            <lightning-layout>
+                <lightning-layout-item padding="around-small">
+                    <div class="header-column">
+                        <h1>Available categories:</h1>
+                        <template if:true={categories}>
+                            <template for:each={categories} for:item="category">
+                                <lightning-input
+                                        key={category}
+                                        label={category}
+                                        data-value={category}
+                                        type="checkbox"
+                                        checked
+                                        onchange={handleCheckboxChange}
+                                ></lightning-input>
+                            </template>
+                        </template>
+                    </div>
+                </lightning-layout-item>
+                <lightning-layout-item padding="around-small">
+                    <div class="header-column">
+                        <lightning-slider
+                                label="Max Price"
+                                step="10"
+                                min="0"
+                                max={maxExistingPrice}
+                                value={maxPrice}
+                                onchange={handleMaxPriceChange}
+                        ></lightning-slider>
+                    </div>
+                </lightning-layout-item>
+            </lightning-layout>
+        </div>
+    </div>
+</template>

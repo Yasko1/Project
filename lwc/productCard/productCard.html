@@ -1,0 +1,20 @@
+<template>
+        <div class="slds-box slds-box_xx-small backCol">
+            <lightning-card title={product.Name}>
+                <div slot="footer">
+                    <lightning-button
+                            class="slds-m-left_x-small"
+                            label="Add to cart"
+                            icon-name="utility:save"
+                            variant="brand"
+                            onclick={handleAddToCartClick}>
+                    </lightning-button>
+                </div>
+                <div>
+                    <p class="slds-p-horizontal_small">Category: <lightning-formatted-text value={product.RecordType.DeveloperName}></lightning-formatted-text></p>
+                    <p class="slds-p-horizontal_small">Manufacturer: <lightning-formatted-text value={product.Account__r.Name}></lightning-formatted-text></p>
+                    <p class="slds-p-horizontal_small">Price: <lightning-formatted-number value={product.Price__c} format-style="currency" currency-code="USD"></lightning-formatted-number></p>
+                </div>
+            </lightning-card>
+        </div>
+</template>

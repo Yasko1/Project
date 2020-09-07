@@ -1,0 +1,39 @@
+<!--
+ - Created by Hanna_Yasko on 2/4/2020.
+ -->
+
+<!-- Order Card -->
+<template>
+    <div class="slds-card slds-p-around_x-small">
+        <lightning-card title="ALL ORDERS" icon-name="standard:record">
+            <template if:true={orders}>
+                <template if:true={orders.length}>
+                    <div class="content">
+                        <template for:each={orders} for:item="order" >
+                            <c-card
+                                    key={order}
+                                    order={order}
+                                    draggable={tilesAreDraggable}
+                                    onselected={handleProductSelected}
+                                    class="slds-card  slds-p-around_x-small slds-m-around_x-small">
+                            </c-card>
+                        </template>
+                    </div>
+
+                    <c-paginator
+                            page-number={pageNumber}
+                            total-item-count={orders.totalItemCount}
+                            onprevious={handlePreviousPage}
+                            onnext={handleNextPage}>
+                    </c-paginator>
+                </template>
+            </template>
+
+            <template if:true={error}>
+                <div class="slds-text-color_error">
+                    An error occurred while loading the order list
+                </div>
+            </template>
+    </lightning-card>
+    </div>
+</template>

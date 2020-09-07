@@ -1,0 +1,24 @@
+<!--
+ - Created by Hanna_Yasko on 2/6/2020.
+ -->
+
+<!-- Card -->
+<template>
+    <a onclick={handleClick}>
+    <div draggable={dtaggable} ondragstart={handleDragStart}>
+        <lightning-card title={Name} icon-name="standard:shift_type">
+                <div class="content">
+                    <div>
+                        <p class="slds-align_absolute-center">
+                        <b>STATUS:</b><i>{Status__c}</i>
+                        <b>DELIVERY TYPE:</b><i>{Delivery_Type__c}</i>
+                        <b>CREATED:</b><i>{Creation_Date__c}</i>
+                        <b>AMMOUNT:</b><i>{Total_Ammount__c}</i>
+                        <b>QUANTITY:</b><i>{Total_Quantity__c}</i>
+                        </p>
+                    </div>
+                </div>
+        </lightning-card>
+    </div>
+    </a>
+</template>

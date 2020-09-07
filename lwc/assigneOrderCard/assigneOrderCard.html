@@ -1,0 +1,26 @@
+<!--
+ - Created by Hanna_Yasko on 2/5/2020.
+ -->
+
+<!-- Assigne Order Card -->
+<template>
+    <lightning-card title="ASSIGNED TO ME" icon-name="standard:new_task">
+        <div class="slds-card__body_inner">
+            <template if:true={orders}>
+                <template if:true={orders.length}>
+                    <div class="content">
+                        <template for:each={orders} for:item="order" >
+                            <c-card
+                                    key={order}
+                                    order={order}
+                                    draggable={tilesAreDraggable}
+                                    onselected={handleProductSelected}
+                                    class="slds-card  slds-p-around_x-small slds-m-around_x-small">
+                            </c-card>
+                        </template>
+                    </div>
+                </template>
+            </template>
+        </div>
+    </lightning-card>
+</template>

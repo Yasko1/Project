@@ -1,0 +1,26 @@
+/**
+ * Created by Hanna_Yasko on 2/6/2020.
+ */
+  b{
+      margin-left: 30px;
+  }
+  i{
+      margin-left:20px;
+
+  }
+ .content {
+     padding: 8px;
+     background-color: #ffffff;
+     border-radius: 0.25rem;
+ }
+
+ a {
+     color: inherit;
+ }
+
+
+ .title {
+     font-weight: bold;
+     text-transform: uppercase;
+ }
+
